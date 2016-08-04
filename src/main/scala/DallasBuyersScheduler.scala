@@ -39,12 +39,17 @@ class DallasBuyersScheduler extends Scheduler {
     for (offer <- list) {
       //println(offer)
 
-      if (validateOffer(offer)) {
+      if (!validateOffer(offer)) {
+
+        // please do this!!!
+        schedulerDriver.declineOffer(offer.getId)
+
+      } else {
 
         // in some scenarios we might decline the offer and
         // continue running the scheduler
         if (downloadQueue.isEmpty()) {
-          //Thread.sleep(10000)
+
           schedulerDriver.declineOffer(offer.getId)
           schedulerDriver.stop()
           System.exit(0)
@@ -72,12 +77,7 @@ class DallasBuyersScheduler extends Scheduler {
         schedulerDriver.launchTasks(Collections.singleton(offer.getId), List(task))
 
       }
-      else {
 
-        // please do this!!!
-        schedulerDriver.declineOffer(offer.getId)
-
-      }
 
     }
 

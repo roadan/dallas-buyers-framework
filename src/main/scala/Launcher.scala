@@ -11,7 +11,7 @@ object Launcher extends App {
     .setUser("root")
 
   val scheduler = DallasBuyersScheduler()
-
-  val driver = new MesosSchedulerDriver(scheduler, frameworkBuilder.build(), "192.168.33.111:5050")
+  val framework = frameworkBuilder.build
+  val driver = new MesosSchedulerDriver(scheduler, framework, "zk://192.168.33.112:2181/mesos")
   driver.run()
 }

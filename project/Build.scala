@@ -19,7 +19,7 @@ object Build extends Build {
   // DEPENDENCY VERSIONS
   //////////////////////////////////////////////////////////////////////////////
 
-  val MESOS_VERSION     = "0.28.0"
+  val MESOS_VERSION     = "0.28.2"
   val PLAY_JSON_VERSION = "2.3.1"
 
   //////////////////////////////////////////////////////////////////////////////
@@ -55,8 +55,8 @@ object Build extends Build {
       "http://repo.typesafe.com/typesafe/releases/",
 
     libraryDependencies ++= Seq(
-      "org.apache.mesos"   % "mesos"     % MESOS_VERSION,
-      "com.typesafe.play" %% "play-json" % PLAY_JSON_VERSION
+      "org.apache.mesos" % "mesos" % MESOS_VERSION,
+      "com.typesafe.play" %% "play-ws" % "2.4.3"
     ),
 
     scalacOptions in Compile ++= Seq(

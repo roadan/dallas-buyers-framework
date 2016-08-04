@@ -44,7 +44,8 @@ class DallasBuyersScheduler extends Scheduler {
         // please do this!!!
         schedulerDriver.declineOffer(offer.getId)
 
-      } else {
+      }
+      else {
 
         // in some scenarios we might decline the offer and
         // continue running the scheduler
@@ -77,7 +78,6 @@ class DallasBuyersScheduler extends Scheduler {
         schedulerDriver.launchTasks(Collections.singleton(offer.getId), List(task))
 
       }
-
 
     }
 
